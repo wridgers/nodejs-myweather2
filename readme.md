@@ -4,7 +4,9 @@ A simple node.js interface to the [myWeather2](http://www.myweather2.com/develop
 
 ## Installing
 
-  $ npm install moduleName
+```
+$ npm install myweather2
+```
 
 ## Example
 
