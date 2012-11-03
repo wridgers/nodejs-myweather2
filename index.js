@@ -22,6 +22,16 @@ MW2.prototype.forecast = function(query, done) {
     .query({ temp_unit: this.temp })
     .query({ ws_unit: this.ws })
     .end(function(err, res) {
-        return done(err, JSON.parse(res.text));
+
+        var obj = [];
+        if (!err) {
+            try {
+                obj = JSON.parse(res.text);
+            } catch(e) {
+                err = true;
+            }
+        }
+
+        return done(err, obj);
     });
 };
