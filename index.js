@@ -21,6 +21,9 @@ MW2.prototype.forecast = function(query, done) {
     .query({ query: query })
     .query({ temp_unit: this.temp })
     .query({ ws_unit: this.ws })
+    .on('error', function(error) {
+    	return done(true, error);
+    })
     .end(function(err, res) {
 
         var obj = [];
